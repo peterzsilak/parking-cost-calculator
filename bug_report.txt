@@ -1,0 +1,37 @@
+Title: Long-Term Garage Parking price calculation exceeded the daily maximum price
+
+Type: bug
+Priority: High
+Label: Long-Term Garage Parking
+Status: OPEN
+Reporter: Peter Zsilak
+Watchers: Peter Zsilak
+Crated: 21/10/2019
+Assign to: Unassigned
+
+Step by step definition (reproduce steps):
+    1. Navigate to the http://www.shino.de/parkcalc page
+    2. Select the "Long-Garage" rate from the drop down list
+    3. Set the parking start to "10/18/2019" and "8:00" and set "AM"
+    4. Set the parking leaving to "10/18/2019" and "14:01" and set "AM"
+    5. Click on the calculate button
+
+Expected result:
+    Then system estimates "$ 12.00" ticket price
+Actual result:
+    System estimates "$ 14.00" ticket price
+
+URL: http://www.shino.de/parkcalc/index.php?ParkingLot=Long-Garage&StartingDate=10%2F21%2F2019&StartingTime=8%3A00&StartingTimeAMPM=AM&LeavingDate=10%2F21%2F2019&LeavingTime=14%3A01&LeavingTimeAMPM=AM&action=calculate&Submit=Calculate
+Screenshot: long-term_garage_parking issue.png
+
+Test automation log:
+
+Scenario Outline: Long-Term Garage Parking                                  # src/test/resources/features/long-term_garage_parking.feature:21
+    Given the parking cost calculator system                                  # ParkingSteps.the_parking_cost_calculator_system()
+    When the user selects the "Long-Garage" rate                              # ParkingSteps.the_user_selects_the_rate(String)
+    And the user starts the parking at "10/18/2019" and "8:00" and sets "AM"  # ParkingSteps.the_user_starts_the_parking_at_and_and_sets(String,String,String)
+    And the user closes the parking at "10/18/2019" and "14:01" and sets "AM" # ParkingSteps.the_user_closes_the_parking_at_and_and_sets(String,String,String)
+    Then the system estimates the "$ 12.00" ticket price                      # ParkingSteps.the_system_estimates_the_ticket_price(String)
+      java.lang.AssertionError:
+Expected: is "$ 12.00"
+     but: was "$ 14.00"
