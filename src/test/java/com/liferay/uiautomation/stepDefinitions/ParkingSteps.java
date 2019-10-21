@@ -5,6 +5,7 @@ import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 
+import static org.hamcrest.CoreMatchers.equalTo;
 import static org.hamcrest.CoreMatchers.is;
 import static org.hamcrest.MatcherAssert.assertThat;
 
@@ -41,4 +42,10 @@ public class ParkingSteps extends PageLoader {
     public void the_system_estimates_the_ticket_price(String expectedCalculatedCost) {
         assertThat(parkingCostCalculator.getCalculatedCost(), is(expectedCalculatedCost));
     }
+
+    @Then("the system displays a the following {string} in the price cell")
+    public void the_system_displays_a_the_following_in_the_price_cell(String warning) {
+        assertThat(parkingCostCalculator.getWarning().toLowerCase(), equalTo(warning.toLowerCase()));
+    }
+
 }

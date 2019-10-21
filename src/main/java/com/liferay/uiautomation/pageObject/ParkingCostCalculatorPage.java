@@ -37,6 +37,9 @@ public class ParkingCostCalculatorPage extends BasePage {
     @FindBy(xpath = "/html/body/form/table/tbody/tr[4]/td[2]/span[1]/b")
     private WebElement calculatedCost;
 
+    @FindBy(xpath = "/html/body/form/table/tbody/tr[4]/td[2]/b")
+    private WebElement warning;
+
     public ParkingCostCalculatorPage(WebDriver webDriver) {
         super(webDriver);
         PageFactory.initElements(webDriver, this);
@@ -93,6 +96,10 @@ public class ParkingCostCalculatorPage extends BasePage {
 
     public String getCalculatedCost(){
         return calculatedCost.getText();
+    }
+
+    public String getWarning(){
+        return warning.getText();
     }
 
     private void setAMPMRadioBox(List<WebElement> AMPMRadioBox, String leavingAMPM) {
