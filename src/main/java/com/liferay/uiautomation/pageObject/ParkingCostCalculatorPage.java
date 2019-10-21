@@ -34,7 +34,7 @@ public class ParkingCostCalculatorPage extends BasePage {
     @FindBy(name = "Submit")
     private WebElement submitButton;
 
-    @FindBy(className = "td.SubHead>b")
+    @FindBy(xpath = "/html/body/form/table/tbody/tr[4]/td[2]/span[1]/b")
     private WebElement calculatedCost;
 
     public ParkingCostCalculatorPage(WebDriver webDriver) {
@@ -46,18 +46,20 @@ public class ParkingCostCalculatorPage extends BasePage {
         return new ParkingCostCalculatorPage(webDriver);
     }
 
-    public ParkingCostCalculatorPage selectParkingLot(ParkingLot parkingLot) {
+    public ParkingCostCalculatorPage selectParkingLot(String parkingLot) {
         Select parkingLotDropDown = new Select(parkingLotSelect);
-        parkingLotDropDown.selectByValue(parkingLot.getValue());
+        parkingLotDropDown.selectByValue(parkingLot);
         return this;
     }
 
     public ParkingCostCalculatorPage setStartingDate(String startingDate) {
+        startingDateField.clear();
         startingDateField.sendKeys(startingDate);
         return this;
     }
 
     public ParkingCostCalculatorPage setStartingTime(String startingTime) {
+        startingTimeField.clear();
         startingTimeField.sendKeys(startingTime);
         return this;
     }
@@ -68,12 +70,14 @@ public class ParkingCostCalculatorPage extends BasePage {
     }
 
     public ParkingCostCalculatorPage setLeavingDate(String leavingDate) {
+        leavingDateField.clear();
         leavingDateField.sendKeys(leavingDate);
         return this;
     }
 
     public ParkingCostCalculatorPage setLeavingTime(String leavingTime) {
-        startingTimeField.sendKeys(leavingTime);
+        leavingTimeField.clear();
+        leavingTimeField.sendKeys(leavingTime);
         return this;
     }
 
