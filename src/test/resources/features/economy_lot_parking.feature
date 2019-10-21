@@ -3,7 +3,7 @@ Feature: Economy Lot Parking
   System should be able to calculate the correct parking fee
 
   @regression
-  Scenario Outline: Economy Lot Parking
+  Scenario Outline: Economy Lot Parking - Boundary Value analysis
     Given the parking cost calculator system
     When the user selects the <ParkingLot> rate
     And the user starts the parking at <StartingDate> and <StartingTime> and sets <StartingAMPM>

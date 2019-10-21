@@ -3,7 +3,7 @@ Feature: Long-Term Surface Parking North Lot
   System should be able to calculate the correct parking fee
 
   @regression
-  Scenario Outline: Long-Term Surface Parking North Lot
+  Scenario Outline: Long-Term Surface Parking (North Lot) - Boundary Value analysis
     Given the parking cost calculator system
     When the user selects the <ParkingLot> rate
     And the user starts the parking at <StartingDate> and <StartingTime> and sets <StartingAMPM>
