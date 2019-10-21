@@ -1,8 +1,8 @@
 package com.liferay.uiautomation.stepDefinitions;
 
 import com.liferay.uiautomation.driver.GenericDriver;
-import org.junit.After;
-import org.junit.Before;
+import io.cucumber.java.After;
+import io.cucumber.java.Before;
 
 public class Hooks {
 
