@@ -1,15 +1,19 @@
 package com.liferay.uiautomation.driver;
 
+import com.liferay.uiautomation.helper.PropertyReader;
+
+import static com.liferay.uiautomation.driver.DriverType.*;
+
 public class DriverFactory {
 
     public Driver chooseBrowser(){
 
-        String browserName = "chrome";
+        String driverType = new PropertyReader().readProperty("DriverType");
 
-        if(browserName.equalsIgnoreCase("firefox")){
+        if(driverType.equals(FIREFOX.name())){
             return new FirefoxDriverManager();
         }
-        else if(browserName.equalsIgnoreCase("chrome")){
+        else if(driverType.equals(CHROME.name())){
             return new ChromeDriverManager();
         }
         return null;

@@ -2,3 +2,6 @@
 UI Test Automation project
 
 url: http://www.shino.de/parkcalc/
+
+## Run with 
+```mvn clean test```
