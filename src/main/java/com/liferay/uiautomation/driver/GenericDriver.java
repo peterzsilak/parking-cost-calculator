@@ -13,7 +13,7 @@ public class GenericDriver {
         return obj;
     }
 
-    public WebDriver getDriver(){ return driver; }
+    public static WebDriver getDriver(){ return driver; }
 
     public static void destroyDriverInstance() {
         driver.quit();

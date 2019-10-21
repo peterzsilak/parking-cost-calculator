@@ -2,6 +2,7 @@ Feature: Valet Parking
   In order to charge the correct amount
   System should be able to calculate the correct parking fee
 
+  @regression
   Scenario Outline: Positive scenarios
     Given the parking cost calculator system
     When the user selects the <ParkingLot> rate

@@ -5,7 +5,6 @@ import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 
-
 import static org.hamcrest.CoreMatchers.is;
 import static org.hamcrest.MatcherAssert.assertThat;
 
@@ -22,7 +21,7 @@ public class ParkingSteps extends PageLoader {
         parkingCostCalculator.selectParkingLot(parkingLot);
     }
 
-    @cucumber.api.java.en.And("the user starts the parking at {string} and {string} and sets {string}")
+    @And("the user starts the parking at {string} and {string} and sets {string}")
     public void the_user_starts_the_parking_at_and_and_sets(String startingDate, String startingTime, String startingAMPM) {
         parkingCostCalculator.using(driver)
                 .setStartingDate(startingDate)

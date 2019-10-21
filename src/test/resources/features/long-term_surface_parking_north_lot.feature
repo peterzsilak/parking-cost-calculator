@@ -2,6 +2,7 @@ Feature: Long-Term Surface Parking North Lot
   In order to charge the correct amount
   System should be able to calculate the correct parking fee
 
+  @regression
   Scenario Outline: Long-Term Surface Parking North Lot
     Given the parking cost calculator system
     When the user selects the <ParkingLot> rate

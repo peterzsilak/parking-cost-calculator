@@ -6,7 +6,7 @@ import org.openqa.selenium.WebDriver;
 
 public class PageLoader {
 
-    public WebDriver driver = GenericDriver.initializeDriverInstance().getDriver();
+    public WebDriver driver = GenericDriver.getDriver();
 
     public ParkingCostCalculatorPage parkingCostCalculator = new ParkingCostCalculatorPage(driver);
 }
