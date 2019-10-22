@@ -8,5 +8,5 @@ import org.junit.runner.RunWith;
 @CucumberOptions(
         plugin = {"pretty"},
         features = "src/test/resources/features",
-        tags = {"@wip"})
+        tags = {"@regression"})
 public class RunCucumberTest { }

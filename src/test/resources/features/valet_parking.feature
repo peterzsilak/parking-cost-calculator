@@ -25,7 +25,7 @@ Feature: Valet Parking
       | "Valet"    | "10/18/2019" | "8:00"       | "AM"         | "10/20/2019" | "8:00"      | "AM"            | "$ 36.00"    |
       | "Valet"    | "10/18/2019" | "8:00"       | "AM"         | "10/20/2019" | "8:01"      | "AM"            | "$ 54.00"    |
 
-  @wip
+  @regression @negative
   Scenario Outline: Negative test
     Given the parking cost calculator system
     When the user selects the <ParkingLot> rate
