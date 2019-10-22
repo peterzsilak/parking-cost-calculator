@@ -17,7 +17,7 @@ Step by step definition (reproduce steps):
     5. Click on the calculate button
 
 Expected result:
-    Then system estimates "$ 12.00" ticket price
+    System estimates "$ 12.00" ticket price
 Actual result:
     System estimates "$ 14.00" ticket price
 
