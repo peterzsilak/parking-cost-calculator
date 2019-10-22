@@ -11,7 +11,8 @@ public class Hooks {
         GenericDriver.initializeDriverInstance();
     }
 
-    @After
+    //TODO: Solution needed for webdriver kill
+    //@After
     public void teardown(){
         GenericDriver.destroyDriverInstance();
     }
